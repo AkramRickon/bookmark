@@ -1,0 +1,23 @@
+<mat-toolbar class="flex justify-center">
+    <span class="mr-5">Bookmark Manager</span>
+    <button mat-stroked-button color="primary" class="sm:text-lg" (click)="addBookmark()">
+        Add Bookmark
+    </button>
+</mat-toolbar>
+
+<div class="flex">
+    <div class="w-2/4">
+        <div *ngFor="let category of categoryList">
+            <app-category-card [category]="category.category" [bookmarkList]="bookmarkList"
+                (newBookmarkDetails)="getBookmarkDetails($event)"></app-category-card>
+        </div>
+    </div>
+    
+    <div class="w-1/4 mt-5">
+        <div *ngIf="bookmarkDetails" class=" my-5 border-2 border-grey-400">
+            <div class="p-2">Title :{{bookmarkDetails.title}}</div>
+            <div class="p-2">URL :{{bookmarkDetails.url}}</div>
+            <div class="p-2">Category: {{bookmarkDetails.category}}</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,39 @@
+<div mat-dialog-title>
+    Add Bookmark
+</div>
+
+<form [formGroup]="bookmarkForm" (ngSubmit)="addBookmark()">
+    <div mat-dialog-content>
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <input matInput placeholder="Title" formControlName="title">
+            </mat-form-field>
+        </div>
+
+        <div>
+            <mat-form-field appearance="outline" class="w-100">
+                <input matInput placeholder="Url" formControlName="url">
+            </mat-form-field>
+        </div>
+
+        <div class="flex items-center">
+            <div>
+                <div>Category</div>
+                <mat-form-field appearance="outline">
+                    <!-- <mat-label>Category</mat-label> -->
+
+                    <mat-select formControlName="category">
+                        <mat-option *ngFor="let category of categoryList"
+                            [value]='category.category'>{{category.category}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <button mat-stroked-button class="ml-1">+</button>
+        </div>
+
+    </div>
+    <div mat-dialog-actions class="flex action">
+        <button mat-raised-button (click)="closeModal()">Cancel</button>
+        <button mat-raised-button color="primary" type="submit">Save</button>
+    </div>
+</form>
