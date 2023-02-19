@@ -32,8 +32,9 @@ export class ApiClientService {
 
   setUpdatedBookmark(data:Bookmark[]){
     this.updatedBookmarkList=data;
+    console.log('from service',this.updatedBookmarkList);
   }
-  
+
    getUpdatedBookmarkList(){
     return this.updatedBookmarkList;
   }

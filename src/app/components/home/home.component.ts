@@ -35,7 +35,8 @@ export class HomeComponent implements OnInit {
 
   addBookmark() {
     this.dialog.open(PopupComponent);
-    this.getBookmarkList();
+    this.bookmarkList=this.apiClient.getUpdatedBookmarkList();
+    console.log('after add',this.bookmarkList)
   }
 
   getBookmarkDetails(id: number) {

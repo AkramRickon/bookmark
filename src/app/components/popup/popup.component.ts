@@ -25,9 +25,12 @@ export class PopupComponent implements OnInit {
     category: ['', Validators.required]
   })
 
-  constructor(private apiClient: ApiClientService, private fb: FormBuilder, private dialogref: DialogRef<PopupComponent>, private router: Router) {
-
+  constructor(private apiClient: ApiClientService,
+    private fb: FormBuilder,
+    private dialogref: DialogRef<PopupComponent>,
+    private router: Router) {
   }
+  
   ngOnInit(): void {
     this.getCategoryList();
     this.getBookmarkList();
@@ -59,10 +62,6 @@ export class PopupComponent implements OnInit {
 
       alert('Bookmark Added Successfully');
       this.dialogref.close();
-
-      this.router.navigate(['']);
-
-
     }
   }
 
