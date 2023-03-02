@@ -43,7 +43,7 @@ export class PopupComponent implements OnInit {
   getBookmarkList() {
     this.apiClient.getBookmark().subscribe(response => {
       this.bookmarkList = response;
-      console.log('from home', this.bookmarkList);
+      // console.log('from home', this.bookmarkList);
     });
   }
 
@@ -68,4 +68,5 @@ export class PopupComponent implements OnInit {
   closeModal() {
     this.dialogref.close()
   }
+
 }

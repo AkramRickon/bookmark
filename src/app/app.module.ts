@@ -33,7 +33,7 @@ import {MatSelectModule} from '@angular/material/select';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ReactiveFormsModule ,
+    ReactiveFormsModule,
     MatToolbarModule,
     MatButtonModule,
     HttpClientModule,
